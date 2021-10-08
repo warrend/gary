@@ -9,6 +9,7 @@ type TextInputProps = {
   width?: string;
   placeholder?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  type: string;
 };
 
 function TextInput({
@@ -18,6 +19,7 @@ function TextInput({
   width,
   placeholder,
   onChange,
+  type,
 }: TextInputProps): JSX.Element {
   return (
     <div style={{ width: width ? width : '100%' }}>
@@ -25,10 +27,10 @@ function TextInput({
       <input
         className={styles.input}
         id={name}
-        type="text"
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        type={type}
       />
     </div>
   );

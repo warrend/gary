@@ -4,9 +4,10 @@ import styles from './button.module.scss';
 
 type ButtonProps = {
   name: string;
-  onClick: () => void;
+  onClick?: () => void;
   secondary?: boolean;
   disabled?: boolean;
+  type: 'button' | 'submit' | 'reset';
 };
 
 function Button({
@@ -14,6 +15,7 @@ function Button({
   onClick,
   secondary,
   disabled,
+  type,
 }: ButtonProps): JSX.Element {
   const btnClass = cn({
     [styles.button]: true,
@@ -25,7 +27,7 @@ function Button({
     <button
       className={btnClass}
       disabled={disabled}
-      type="button"
+      type={type}
       onClick={onClick}
     >
       {name}

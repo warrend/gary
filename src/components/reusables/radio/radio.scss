@@ -1,0 +1,14 @@
+.radio input[type='radio'] {
+  display: none;
+  margin-bottom: 0.25rem;
+}
+
+.radio input[type='radio'] + label {
+  background: url('../../../images/radio-unchecked.svg') left center no-repeat;
+  padding-left: 30px;
+}
+
+.radio input[type='radio']:checked + label {
+  background: url('../../../images/radio-checked.svg') left center no-repeat;
+  padding-left: 30px;
+}
