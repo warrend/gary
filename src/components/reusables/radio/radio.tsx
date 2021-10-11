@@ -1,5 +1,5 @@
 import React from 'react';
-import './radio.scss';
+import styles from './radio.module.scss';
 
 type RadioProps = {
   text: string;
@@ -19,7 +19,7 @@ function Radio({
   disabled,
 }: RadioProps): JSX.Element {
   return (
-    <div className="radio">
+    <div className={styles.radio}>
       <input
         type="radio"
         id={name}

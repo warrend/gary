@@ -3,7 +3,6 @@ import { useFormik, FormikHelpers } from 'formik';
 import { useAuth } from '../../../contexts/auth-context';
 import TextInput from '../../reusables/text-input';
 import Button from '../../reusables/button';
-import Radio from '../../reusables/radio';
 import {
   EMAIL_LABEL,
   EMAIL_NAME,
@@ -47,25 +46,9 @@ export default function Login(): JSX.Element {
       },
     });
 
-  console.log('values', values);
-
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <Radio
-          text="Practice"
-          value="practice"
-          checked={values.radio === 'practice'}
-          name="practice"
-          onClick={(e: any) => setFieldValue('radio', e.target.value)}
-        />
-        <Radio
-          text="Lab"
-          value="lab"
-          checked={values.radio === 'lab'}
-          name="lab"
-          onClick={(e: any) => setFieldValue('radio', e.target.value)}
-        />
         <TextInput
           label={EMAIL_LABEL}
           onChange={handleChange}
