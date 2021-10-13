@@ -22,8 +22,10 @@ function TextInput({
   type,
 }: TextInputProps): JSX.Element {
   return (
-    <div style={{ width: width ? width : '100%' }}>
-      <label htmlFor={name}>{label}</label>
+    <div style={{ width: width ? width : '100%' }} className={styles.wrapper}>
+      <label htmlFor={name} className={styles.label}>
+        {label}
+      </label>
       <input
         className={styles.input}
         id={name}

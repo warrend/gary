@@ -17,6 +17,7 @@ import {
   collection,
   doc,
 } from 'firebase/firestore';
+import { TAddress } from '../../components/authentication/signup/signup';
 
 type TContextProps = {
   children?: React.ReactNode;
@@ -37,17 +38,22 @@ export default function AuthContextProvider({
 }: TContextProps): JSX.Element {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
 
-  async function signup(email: string, password: string, type: string) {
+  async function signup(
+    email: string,
+    password: string,
+    address: TAddress,
+    businessName: string,
+    accountType: string
+  ) {
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
-      const docRef = doc(db, 'users', res.user.uid);
+      const docRef = doc(db, accountType, res.user.uid);
       await setDoc(docRef, {
-        name: type,
-        state: 'CA',
-        country: 'USA',
+        address,
+        businessName,
       });
     } catch (e) {
-      console.log(e);
+      console.error(e);
     }
   }
 

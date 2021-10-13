@@ -1,10 +1,22 @@
+.wrapper {
+  margin-bottom: var(--normal);
+
+  .label {
+    font-weight: 500;
+  }
+}
+
 .input[type='password'],
 .input[type='text'] {
   width: 100%;
   padding: 10px 16px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid var(--input-border);
   border-radius: 4px;
   box-sizing: border-box;
+
+  &::placeholder {
+    color: var(--grey400);
+  }
 }

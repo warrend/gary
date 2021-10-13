@@ -1,0 +1,14 @@
+.wrapper {
+  width: min(90vw, 540px);
+  background: white;
+  padding: var(--large);
+  margin: 0 auto;
+  box-shadow: var(--shadow300);
+  border-radius: var(--border-radius);
+}
+
+.half {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: var(--normal);
+}

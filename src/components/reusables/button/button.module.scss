@@ -14,13 +14,25 @@
   position: relative;
   display: inline-block;
   outline: none;
-  border-radius: 5px;
+  border-radius: 4px;
   border: none;
   background: var(--primary500);
-}
-.button:hover {
-  background-color: var(--primary600);
-}
-.button:active {
-  top: 1px;
+
+  &:hover {
+    background-color: var(--primary600);
+  }
+
+  &:active {
+    top: 1px;
+  }
+
+  &.alternate {
+    color: var(--primary500);
+    background: none;
+
+    &:hover {
+      background-color: none;
+      color: var(--primary600);
+    }
+  }
 }

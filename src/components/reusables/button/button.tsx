@@ -8,6 +8,7 @@ type ButtonProps = {
   secondary?: boolean;
   disabled?: boolean;
   type: 'button' | 'submit' | 'reset';
+  style?: any;
 };
 
 function Button({
@@ -16,6 +17,7 @@ function Button({
   secondary,
   disabled,
   type,
+  style,
 }: ButtonProps): JSX.Element {
   const btnClass = cn({
     [styles.button]: true,
@@ -25,6 +27,7 @@ function Button({
 
   return (
     <button
+      style={style || {}}
       className={btnClass}
       disabled={disabled}
       type={type}
