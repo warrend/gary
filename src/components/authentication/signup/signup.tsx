@@ -4,6 +4,7 @@ import TextInput from '../../reusables/text-input';
 import Button from '../../reusables/button';
 import { useAuth } from '../../../contexts/auth-context';
 import Radio from '../../reusables/radio';
+import RadioGroup from '../../reusables/radio-group';
 import styles from './signup.module.scss';
 import {
   EMAIL_LABEL,
@@ -65,6 +66,23 @@ export default function Signup(): JSX.Element {
     },
   });
 
+  const radioConfig = [
+    {
+      text: 'Practice',
+      value: 'practices',
+      checked: values.accountType === 'practices',
+      name: 'practices',
+      onClick: (e: any) => setFieldValue('accountType', e.target.value),
+    },
+    {
+      text: 'Lab',
+      value: 'labs',
+      checked: values.accountType === 'labs',
+      name: 'labs',
+      onClick: (e: any) => setFieldValue('accountType', e.target.value),
+    },
+  ];
+
   return (
     <div className={styles.wrapper}>
       <form onSubmit={handleSubmit}>
@@ -85,20 +103,7 @@ export default function Signup(): JSX.Element {
           type="password"
           placeholder={PASSWORD_PLACEHOLDER}
         />
-        <Radio
-          text="Practice"
-          value="practices"
-          checked={values.accountType === 'practices'}
-          name="practices"
-          onClick={(e: any) => setFieldValue('accountType', e.target.value)}
-        />
-        <Radio
-          text="Lab"
-          value="labs"
-          checked={values.accountType === 'labs'}
-          name="labs"
-          onClick={(e: any) => setFieldValue('accountType', e.target.value)}
-        />
+        <RadioGroup config={radioConfig} row />
         <TextInput
           label="Company name"
           onChange={handleChange}

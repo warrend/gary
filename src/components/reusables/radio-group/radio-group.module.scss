@@ -1,0 +1,12 @@
+.wrapper {
+  margin-bottom: var(--normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+  > div {
+    margin-right: var(--normal);
+  }
+}
