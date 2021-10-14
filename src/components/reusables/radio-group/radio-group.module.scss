@@ -1,4 +1,12 @@
 .wrapper {
+}
+
+.heading {
+  font-weight: 500;
+}
+
+.content {
+  margin-top: var(--small);
   margin-bottom: var(--normal);
   display: flex;
   flex-direction: column;

@@ -8,10 +8,10 @@
 
 .radio input[type='radio'] + label {
   background: url('../../../images/radio-unchecked.svg') left center no-repeat;
-  padding-left: 30px;
+  padding-left: var(--large);
 }
 
 .radio input[type='radio']:checked + label {
   background: url('../../../images/radio-checked.svg') left center no-repeat;
-  padding-left: 30px;
+  padding-left: var(--large);
 }

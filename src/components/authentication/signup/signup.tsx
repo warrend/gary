@@ -85,6 +85,7 @@ export default function Signup(): JSX.Element {
 
   return (
     <div className={styles.wrapper}>
+      <h2>Create an account</h2>
       <form onSubmit={handleSubmit}>
         {errors && errors.email && <div>Email already in use</div>}
         <TextInput
@@ -103,7 +104,7 @@ export default function Signup(): JSX.Element {
           type="password"
           placeholder={PASSWORD_PLACEHOLDER}
         />
-        <RadioGroup config={radioConfig} row />
+        <RadioGroup heading="Business type" config={radioConfig} />
         <TextInput
           label="Company name"
           onChange={handleChange}
